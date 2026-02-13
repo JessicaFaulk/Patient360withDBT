@@ -21,18 +21,24 @@ patient_360_dbt_project/
 ├── profiles.yml              # dbt connection profile (not usually in repo)
 ├── models/
 │   ├── staging/              # staging tables (raw → cleaned)
-│   │   └── stg_patients.sql
-│   │   └── stg_encounters.sql
+│   │   ├── stg_patients.sql
+│   │   ├── stg_encounters.sql
 │   │   └── stg_conditions.sql
 │   └── marts/                # dimension and fact tables
-│       └── dimensions/
-│           └── dim_patient.sql
-│       └── fct_claims.sql
+│       ├── dimensions/
+│       │   ├── dim_patient.sql
+│       │   ├── dim_encounter.sql
+│       │   └── dim_condition.sql
+│       └── facts/
+│           └── fct_claims.sql
 ├── seeds/                    # CSV lookup/reference tables
-│   └── gender_lookup.csv
+│   ├── gender_lookup.csv
+│   └── zipcode_zcta.csv
 ├── snapshots/                # snapshots for slowly changing dimensions
 ├── tests/                    # custom dbt tests
 ├── macros/                   # custom dbt macros
+├── notebooks/                # exploratory analysis notebooks
+└── README.md                 # project documentation
 
 
 
